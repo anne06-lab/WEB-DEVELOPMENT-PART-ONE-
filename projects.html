@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Explore GreenHope Foundation environmental projects including tree planting, community clean-ups and youth education.">
+
+    <meta name="keywords" content="GreenHope Foundation projects, tree planting, community clean-up, environmental education, youth environmental projects">
+
+    <title>Our Projects | GreenHope Foundation</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .projects-hero {
+            position: relative;
+            min-height: 55vh;
+            display: flex;
+            align-items: center;
+            padding: 80px 8%;
+            background: linear-gradient(
+                90deg,
+                rgba(10, 55, 32, 0.92),
+                rgba(28, 83, 47, 0.70),
+                rgba(28, 83, 47, 0.35)
+            ),
+            url("images/projectone.jpeg");
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+
+        .projects-hero-content {
+            max-width: 780px;
+        }
+
+        .projects-hero .eyebrow {
+            color: #c9e6a9;
+        }
+
+        .projects-hero h1 {
+            font-size: clamp(2.6rem, 5vw, 4.7rem);
+            line-height: 1.05;
+            margin-bottom: 20px;
+        }
+
+        .projects-hero p:last-child {
+            max-width: 680px;
+            font-size: 1.1rem;
+        }
+
+        .projects-section {
+            padding: 85px 8%;
+            background: #fbfdf9;
+        }
+
+        .projects-container {
+            max-width: 1250px;
+            margin: auto;
+        }
+
+        .projects-heading {
+            max-width: 720px;
+            margin: 0 auto 50px;
+            text-align: center;
+        }
+
+        .projects-heading h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            line-height: 1.15;
+            color: #19352a;
+            margin-bottom: 15px;
+        }
+
+        .projects-heading p:last-child {
+            color: #5c6d61;
+        }
+
+        .featured-project {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 430px;
+            margin-bottom: 30px;
+            background: white;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 12px 35px rgba(25, 65, 42, 0.08);
+        }
+
+        .featured-project-image {
+            min-height: 430px;
+            background-image: url("images/projectone.jpeg");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .featured-project-content {
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .project-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            margin-bottom: 20px;
+            border-radius: 50%;
+            background: #e5f0dd;
+            color: #477d35;
+            font-weight: 800;
+        }
+
+        .featured-project h2 {
+            font-size: 2.2rem;
+            color: #19352a;
+            margin-bottom: 14px;
+        }
+
+        .featured-project p {
+            color: #5c6d61;
+            margin-bottom: 20px;
+        }
+
+        .tag {
+            align-self: flex-start;
+            padding: 6px 13px;
+            background: #e7f1e1;
+            color: #477d35;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .project-card {
+            background: white;
+            border: 1px solid #e1e9df;
+            border-radius: 12px;
+            padding: 32px;
+            transition: 0.25s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(25, 65, 42, 0.08);
+        }
+
+        .project-card h2 {
+            color: #19352a;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .project-card p {
+            color: #5c6d61;
+            margin-bottom: 18px;
+        }
+
+        .second-project {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            margin-top: 30px;
+            background: white;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 12px 35px rgba(25, 65, 42, 0.08);
+        }
+
+        .second-project-image {
+            min-height: 350px;
+            background-image: url("images/projecttwo.jpeg");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .second-project-content {
+            padding: 45px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .second-project-content h2 {
+            font-size: 2rem;
+            color: #19352a;
+            margin-bottom: 12px;
+        }
+
+        .second-project-content p {
+            color: #5c6d61;
+            margin-bottom: 20px;
+        }
+
+        .project-impact {
+            padding: 75px 8%;
+            background: #f0f5ed;
+        }
+
+        .project-impact-container {
+            max-width: 1100px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .project-impact h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: #19352a;
+            line-height: 1.15;
+            margin-bottom: 18px;
+        }
+
+        .project-impact p {
+            max-width: 800px;
+            margin: auto;
+            color: #5c6d61;
+        }
+
+        .projects-action {
+            padding: 70px 8%;
+            background: #245238;
+            color: white;
+        }
+
+        .projects-action-container {
+            max-width: 1100px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 35px;
+        }
+
+        .projects-action .eyebrow {
+            color: #b9d995;
+        }
+
+        .projects-action h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            line-height: 1.15;
+        }
+
+        @media (max-width: 850px) {
+
+            .projects-hero {
+                min-height: 52vh;
+                padding: 70px 7%;
+            }
+
+            .projects-section,
+            .project-impact,
+            .projects-action {
+                padding: 65px 7%;
+            }
+
+            .featured-project,
+            .second-project {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-project-image {
+                min-height: 320px;
+            }
+
+            .second-project-image {
+                min-height: 300px;
+                order: -1;
+            }
+
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-action-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .projects-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .featured-project-content,
+            .second-project-content {
+                padding: 30px;
+            }
+
+            .featured-project-image,
+            .second-project-image {
+                min-height: 250px;
+            }
+
+            .project-card {
+                padding: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="site-header">
+
+    <a class="logo" href="index.html">
+        Green<span>Hope</span> Foundation
+    </a>
+
+    <button class="menu-toggle"
+            aria-label="Open navigation"
+            aria-expanded="false">
+        ☰
+    </button>
+
+    <nav class="main-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a class="active" href="projects.html">Our Projects</a>
+        <a href="enquiry.html">Get Involved</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+</header>
+
+
+<main>
+
+    <section class="projects-hero">
+
+        <div class="projects-hero-content">
+
+            <p class="eyebrow">
+                OUR PROJECTS
+            </p>
+
+            <h1>
+                Turning environmental ideas into action.
+            </h1>
+
+            <p>
+                Our programmes are designed around practical projects
+                that communities can participate in, support and sustain.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section class="projects-section">
+
+        <div class="projects-container">
+
+            <div class="projects-heading">
+
+                <p class="eyebrow">
+                    WHAT WE DO
+                </p>
+
+                <h2>
+                    Projects that create visible change.
+                </h2>
+
+                <p>
+                    From greener streets to cleaner communities,
+                    every GreenHope project starts with people working
+                    together toward a healthier environment.
+                </p>
+
+            </div>
+
+
+            <article class="featured-project">
+
+                <div class="featured-project-image"></div>
+
+                <div class="featured-project-content">
+
+                    <div class="project-number">
+                        01
+                    </div>
+
+                    <h2>
+                        Green Streets
+                    </h2>
+
+                    <p>
+                        A neighbourhood greening programme combining
+                        tree planting, garden maintenance and
+                        environmental awareness activities.
+                    </p>
+
+                    <span class="tag">
+                        Community
+                    </span>
+
+                </div>
+
+            </article>
+
+
+            <div class="project-grid">
+
+                <article class="project-card">
+
+                    <div class="project-number">
+                        02
+                    </div>
+
+                    <h2>
+                        Clean &amp; Care
+                    </h2>
+
+                    <p>
+                        Community clean-up events that encourage
+                        responsible waste disposal and help restore
+                        shared public spaces.
+                    </p>
+
+                    <span class="tag">
+                        Clean-up
+                    </span>
+
+                </article>
+
+
+                <article class="project-card">
+
+                    <div class="project-number">
+                        03
+                    </div>
+
+                    <h2>
+                        Green Schools
+                    </h2>
+
+                    <p>
+                        Interactive environmental sessions for learners
+                        covering recycling, water conservation,
+                        biodiversity and sustainable habits.
+                    </p>
+
+                    <span class="tag">
+                        Education
+                    </span>
+
+                </article>
+
+            </div>
+
+
+            <article class="second-project">
+
+                <div class="second-project-image"></div>
+
+                <div class="second-project-content">
+
+                    <div class="project-number">
+                        04
+                    </div>
+
+                    <h2>
+                        Future Guardians
+                    </h2>
+
+                    <p>
+                        A youth volunteer programme that gives young
+                        people opportunities to participate in
+                        environmental campaigns and community projects.
+                    </p>
+
+                    <span class="tag">
+                        Youth
+                    </span>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <section class="project-impact">
+
+        <div class="project-impact-container">
+
+            <p class="eyebrow">
+                OUR APPROACH
+            </p>
+
+            <h2>
+                Every project begins with a community.
+            </h2>
+
+            <p>
+                GreenHope Foundation focuses on projects that are
+                practical, inclusive and capable of creating lasting
+                environmental benefits. By working with residents,
+                schools, volunteers and local partners, we turn
+                environmental goals into action.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section class="projects-action">
+
+        <div class="projects-action-container">
+
+            <div>
+
+                <p class="eyebrow">
+                    WANT TO HELP?
+                </p>
+
+                <h2>
+                    Your time can become part of the impact.
+                </h2>
+
+            </div>
+
+            <a class="button button-light" href="enquiry.html">
+                Join a Project
+            </a>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer class="site-footer">
+
+    <div>
+
+        <a class="logo footer-logo" href="index.html">
+            Green<span>Hope</span> Foundation
+        </a>
+
+        <p>
+            Growing a greener future, together.
+        </p>
+
+    </div>
+
+
+    <div>
+
+        <h3>
+            Quick Links
+        </h3>
+
+        <a href="about.html">About Us</a>
+        <a href="projects.html">Our Projects</a>
+        <a href="enquiry.html">Get Involved</a>
+        <a href="contact.html">Contact</a>
+
+    </div>
+
+
+    <div>
+
+        <h3>
+            Contact
+        </h3>
+
+        <p>
+            hello@greenhope.org.za
+        </p>
+
+        <p>
+            +27 10 555 0148
+        </p>
+
+    </div>
+
+</footer>
+
+
+<div class="copyright">
+    © 2026 GreenHope Foundation.
+</div>
+
+
+<script src="js/script.js"></script>
+
+</body>
+</html>

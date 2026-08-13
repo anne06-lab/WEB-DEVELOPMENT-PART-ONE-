@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="GreenHope Foundation works with communities to create a greener, cleaner and more sustainable future.">
+
+    <meta name="keywords" content="GreenHope Foundation, environmental NGO, South Africa, tree planting, community cleanups, sustainability">
+
+    <title>GreenHope Foundation | Growing a Greener Future</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .home-hero {
+            position: relative;
+            min-height: 78vh;
+            display: flex;
+            align-items: center;
+            padding: 90px 8%;
+            background-image: url("images/Nature.jpeg");
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            overflow: hidden;
+            color: white;
+        }
+
+        .home-hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                90deg,
+                rgba(8, 45, 27, 0.92),
+                rgba(20, 75, 42, 0.70),
+                rgba(20, 75, 42, 0.25)
+            );
+        }
+
+        .home-hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+        }
+
+        .home-hero .eyebrow {
+            color: #c9e6a9;
+        }
+
+        .home-hero h1 {
+            font-size: clamp(2.8rem, 6vw, 5.3rem);
+            line-height: 1.04;
+            margin-bottom: 24px;
+        }
+
+        .home-hero-description {
+            max-width: 680px;
+            font-size: 1.15rem;
+            line-height: 1.8;
+            margin-bottom: 32px;
+            color: #f0f7ed;
+        }
+
+        .home-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .home-button {
+            display: inline-block;
+            padding: 13px 24px;
+            border-radius: 6px;
+            font-weight: 700;
+            transition: 0.25s ease;
+        }
+
+        .home-button-primary {
+            background: #72a843;
+            color: white;
+        }
+
+        .home-button-primary:hover {
+            background: #5d9137;
+            transform: translateY(-2px);
+        }
+
+        .home-button-light {
+            background: white;
+            color: #245238;
+        }
+
+        .home-button-light:hover {
+            background: #edf5e9;
+            transform: translateY(-2px);
+        }
+
+        .home-intro {
+            padding: 85px 8%;
+            background: #ffffff;
+        }
+
+        .home-intro-container {
+            max-width: 1250px;
+            margin: auto;
+        }
+
+        .home-heading {
+            max-width: 720px;
+            margin: 0 auto 45px;
+            text-align: center;
+        }
+
+        .home-heading h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            line-height: 1.15;
+            margin-bottom: 15px;
+            color: #19352a;
+        }
+
+        .home-heading p:last-child {
+            color: #5c6d61;
+        }
+
+        .home-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .home-card {
+            background: #fbfdf9;
+            padding: 35px;
+            border: 1px solid #e1e9df;
+            border-radius: 10px;
+            transition: 0.25s ease;
+        }
+
+        .home-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 14px 32px rgba(25, 65, 42, 0.09);
+        }
+
+        .home-icon {
+            width: 58px;
+            height: 58px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            border-radius: 50%;
+            background: #e6f1df;
+            font-size: 1.8rem;
+        }
+
+        .home-card h3 {
+            color: #19352a;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .home-card p {
+            color: #5c6d61;
+        }
+
+        .home-purpose {
+            padding: 75px 8%;
+            background: #245238;
+            color: white;
+        }
+
+        .home-purpose-container {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .home-purpose .eyebrow {
+            color: #b9d995;
+        }
+
+        .home-purpose h2 {
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            line-height: 1.15;
+        }
+
+        .home-purpose-text {
+            color: #dcebd8;
+            font-size: 1.05rem;
+        }
+
+        .home-vision {
+            padding: 85px 8%;
+            background: #f0f5ed;
+        }
+
+        .home-vision-container {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .home-vision h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            line-height: 1.15;
+            color: #19352a;
+            margin-bottom: 18px;
+        }
+
+        .home-vision p {
+            color: #5c6d61;
+            margin-bottom: 18px;
+        }
+
+        .home-feature {
+            padding: 38px;
+            background: white;
+            border-left: 5px solid #72a843;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(25, 65, 42, 0.06);
+        }
+
+        .home-feature h3 {
+            color: #245238;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .home-link {
+            color: #477d35;
+            font-weight: 800;
+        }
+
+        .home-cta {
+            padding: 75px 8%;
+            background: #163b29;
+            color: white;
+            text-align: center;
+        }
+
+        .home-cta-container {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .home-cta h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 15px;
+        }
+
+        .home-cta p {
+            color: #dcebd8;
+            margin-bottom: 28px;
+        }
+
+        @media (max-width: 850px) {
+
+            .home-hero {
+                min-height: 70vh;
+                padding: 75px 7%;
+            }
+
+            .home-cards,
+            .home-purpose-container,
+            .home-vision-container {
+                grid-template-columns: 1fr;
+            }
+
+            .home-intro,
+            .home-purpose,
+            .home-vision,
+            .home-cta {
+                padding: 65px 7%;
+            }
+
+            .home-purpose-container,
+            .home-vision-container {
+                gap: 35px;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .home-hero {
+                min-height: 72vh;
+            }
+
+            .home-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .home-hero-description {
+                font-size: 1rem;
+            }
+
+            .home-buttons {
+                flex-direction: column;
+            }
+
+            .home-button {
+                width: 100%;
+                text-align: center;
+            }
+
+            .home-card {
+                padding: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="site-header">
+
+    <a class="logo" href="index.html">
+        Green<span>Hope</span> Foundation
+    </a>
+
+    <button class="menu-toggle"
+            aria-label="Open navigation"
+            aria-expanded="false">
+        ☰
+    </button>
+
+    <nav class="main-nav" aria-label="Main navigation">
+        <a class="active" href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="projects.html">Our Projects</a>
+        <a href="enquiry.html">Get Involved</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+</header>
+
+
+<main>
+
+    <section class="home-hero">
+
+        <div class="home-hero-content">
+
+            <p class="eyebrow">
+                COMMUNITY • ENVIRONMENT • ACTION
+            </p>
+
+            <h1>
+                Together, we can grow a greener future.
+            </h1>
+
+            <p class="home-hero-description">
+                GreenHope Foundation brings people together to protect
+                the environment, strengthen communities and inspire
+                practical action for a sustainable South Africa.
+            </p>
+
+            <div class="home-buttons">
+
+                <a class="home-button home-button-primary"
+                   href="enquiry.html">
+                    Get Involved
+                </a>
+
+                <a class="home-button home-button-light"
+                   href="projects.html">
+                    Explore Our Projects
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="home-intro">
+
+        <div class="home-intro-container">
+
+            <div class="home-heading">
+
+                <p class="eyebrow">
+                    WHAT WE DO
+                </p>
+
+                <h2>
+                    Small actions. Lasting impact.
+                </h2>
+
+                <p>
+                    Our programmes focus on practical environmental
+                    action and meaningful community participation.
+                </p>
+
+            </div>
+
+
+            <div class="home-cards">
+
+                <article class="home-card">
+
+                    <div class="home-icon">
+                        🌱
+                    </div>
+
+                    <h3>
+                        Tree Planting
+                    </h3>
+
+                    <p>
+                        We organise community tree-planting initiatives
+                        that help create healthier and greener public spaces.
+                    </p>
+
+                </article>
+
+
+                <article class="home-card">
+
+                    <div class="home-icon">
+                        ♻️
+                    </div>
+
+                    <h3>
+                        Clean Communities
+                    </h3>
+
+                    <p>
+                        We support clean-up campaigns and encourage
+                        responsible waste management in neighbourhoods
+                        and schools.
+                    </p>
+
+                </article>
+
+
+                <article class="home-card">
+
+                    <div class="home-icon">
+                        🌍
+                    </div>
+
+                    <h3>
+                        Environmental Education
+                    </h3>
+
+                    <p>
+                        We help young people and communities understand
+                        sustainability and turn knowledge into action.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="home-purpose">
+
+        <div class="home-purpose-container">
+
+            <div>
+
+                <p class="eyebrow">
+                    OUR PURPOSE
+                </p>
+
+                <h2>
+                    Creating hope through environmental action.
+                </h2>
+
+            </div>
+
+            <p class="home-purpose-text">
+                We believe a healthier environment starts with informed,
+                involved communities. Our work connects volunteers,
+                schools, local organisations and businesses around
+                projects that make a visible difference.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section class="home-vision">
+
+        <div class="home-vision-container">
+
+            <div>
+
+                <p class="eyebrow">
+                    WHY GREENHOPE?
+                </p>
+
+                <h2>
+                    Everyone has a part to play.
+                </h2>
+
+                <p>
+                    Whether you volunteer for a clean-up, support a
+                    school programme or help fund a community project,
+                    your contribution can help create spaces where
+                    people and nature can thrive together.
+                </p>
+
+                <a class="home-link" href="about.html">
+                    Learn more about us →
+                </a>
+
+            </div>
+
+
+            <div class="home-feature">
+
+                <h3>
+                    Our Vision
+                </h3>
+
+                <p>
+                    Communities across South Africa where people
+                    actively care for the environment and have the
+                    knowledge and opportunities to build a sustainable
+                    future.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="home-cta">
+
+        <div class="home-cta-container">
+
+            <h2>
+                Be part of the change.
+            </h2>
+
+            <p>
+                Join GreenHope Foundation and help us create cleaner,
+                greener and healthier communities.
+            </p>
+
+            <a class="home-button home-button-primary"
+               href="enquiry.html">
+                Get Involved
+            </a>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer class="site-footer">
+
+    <div>
+
+        <a class="logo footer-logo" href="index.html">
+            Green<span>Hope</span> Foundation
+        </a>
+
+        <p>
+            Growing a greener future, together.
+        </p>
+
+    </div>
+
+
+    <div>
+
+        <h3>
+            Quick Links
+        </h3>
+
+        <a href="about.html">About Us</a>
+        <a href="projects.html">Our Projects</a>
+        <a href="enquiry.html">Get Involved</a>
+        <a href="contact.html">Contact</a>
+
+    </div>
+
+
+    <div>
+
+        <h3>
+            Contact
+        </h3>
+
+        <p>
+            hello@greenhope.org.za
+        </p>
+
+        <p>
+            +27 10 555 0148
+        </p>
+
+    </div>
+
+</footer>
+
+
+<div class="copyright">
+    © 2026 GreenHope Foundation.
+</div>
+
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
